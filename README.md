@@ -1,11 +1,8 @@
-# autonomous-robot-navigation
-A complete ROS 2 Jazzy navigation system featuring a custom URDF/Xacro robot with SLAM, Navigation2, and multi-sensor integration in Gazebo Harmonic.
-
 # Autonomous Mobile Robot Navigation Stack
 
 A complete ROS 2 Jazzy navigation system featuring a custom URDF/Xacro robot with SLAM, Navigation2, and multi-sensor integration in Gazebo Harmonic.
 
-## 🚀 Features
+## Features
 - **Custom Robot Design**: URDF/Xacro robot with camera, LiDAR, and IMU sensors
 - **Simulation Environment**: Gazebo Harmonic warehouse world
 - **SLAM Mapping**: Real-time map creation using SLAM toolbox
@@ -13,7 +10,7 @@ A complete ROS 2 Jazzy navigation system featuring a custom URDF/Xacro robot wit
 - **Sensor Integration**: Fused data from camera, LiDAR, and IMU
 - **Modern Stack**: Built on ROS 2 Jazzy and Ubuntu 24.04
 
-## 🛠️ Technologies
+## Technologies
 - **ROS 2**: Jazzy Jalisco
 - **Simulation**: Gazebo Harmonic
 - **Navigation**: Navigation2 Stack
@@ -21,4 +18,4 @@ A complete ROS 2 Jazzy navigation system featuring a custom URDF/Xacro robot wit
 - **Robot Description**: URDF/Xacro
 - **Platform**: Ubuntu 24.04 Noble
 
-## 📁 Project Structure
+## Project Structure
