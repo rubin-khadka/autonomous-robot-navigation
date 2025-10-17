@@ -1,0 +1,988 @@
+<sdf version='1.10'>
+  <world name='empty'>
+    <physics name='1ms' type='ignored'>
+      <max_step_size>0.004</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>250</real_time_update_rate>
+    </physics>
+    <plugin name='gz::sim::systems::Physics' filename='gz-sim-physics-system'/>
+    <plugin name='gz::sim::systems::UserCommands' filename='gz-sim-user-commands-system'/>
+    <plugin name='gz::sim::systems::SceneBroadcaster' filename='gz-sim-scene-broadcaster-system'/>
+    <plugin name='gz::sim::systems::Contact' filename='gz-sim-contact-system'/>
+    <gravity>0 0 -9.8000000000000007</gravity>
+    <magnetic_field>5.5644999999999998e-06 2.2875799999999999e-05 -4.2388400000000002e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <scene>
+      <ambient>0.400000006 0.400000006 0.400000006 1</ambient>
+      <background>0.699999988 0.699999988 0.699999988 1</background>
+      <shadows>true</shadows>
+    </scene>
+    <model name='ground_plane'>
+      <static>true</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.800000012 0.800000012 0.800000012 1</ambient>
+            <diffuse>0.800000012 0.800000012 0.800000012 1</diffuse>
+            <specular>0.800000012 0.800000012 0.800000012 1</specular>
+          </material>
+        </visual>
+        <pose>0 0 0 0 0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>0 0 0 0 0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='grey_wall'>
+      <static>true</static>
+      <link name='link'>
+        <pose>0 0 1.3999999999999999 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>7.5 0.20000000000000001 2.7999999999999998</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <box>
+              <size>7.5 0.20000000000000001 2.7999999999999998</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/grey wall/3/files/materials/scripts</uri>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/grey wall/3/files/materials/textures</uri>
+              <name>vrc/grey_wall</name>
+            </script>
+          </material>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-5.448154277161251 8.0304941926118616 0 0 0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='grey_wall_0'>
+      <static>true</static>
+      <link name='link'>
+        <pose>0 0 1.3999999999999999 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>7.5 0.20000000000000001 2.7999999999999998</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <box>
+              <size>7.5 0.20000000000000001 2.7999999999999998</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/grey wall/3/files/materials/scripts</uri>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/grey wall/3/files/materials/textures</uri>
+              <name>vrc/grey_wall</name>
+            </script>
+          </material>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-8.8939113616943359 4.3755970001220703 0 0 0 1.5665299667756876</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='grey_wall_1'>
+      <static>true</static>
+      <link name='link'>
+        <pose>0 0 1.3999999999999999 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>7.5 0.20000000000000001 2.7999999999999998</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <box>
+              <size>7.5 0.20000000000000001 2.7999999999999998</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/grey wall/3/files/materials/scripts</uri>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/grey wall/3/files/materials/textures</uri>
+              <name>vrc/grey_wall</name>
+            </script>
+          </material>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>1.2551037846757858 8.023968621289475 0 0 0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='grey_wall_0_1'>
+      <static>true</static>
+      <link name='link'>
+        <pose>0 0 1.3999999999999999 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>7.5 0.20000000000000001 2.7999999999999998</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <box>
+              <size>7.5 0.20000000000000001 2.7999999999999998</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/grey wall/3/files/materials/scripts</uri>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/grey wall/3/files/materials/textures</uri>
+              <name>vrc/grey_wall</name>
+            </script>
+          </material>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-8.9230759540984348 -2.8532397929636293 0 0 0 1.5665299667756876</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='grey_wall_0_2'>
+      <static>true</static>
+      <link name='link'>
+        <pose>0 0 1.3999999999999999 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>7.5 0.20000000000000001 2.7999999999999998</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <box>
+              <size>7.5 0.20000000000000001 2.7999999999999998</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/grey wall/3/files/materials/scripts</uri>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/grey wall/3/files/materials/textures</uri>
+              <name>vrc/grey_wall</name>
+            </script>
+          </material>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-8.938431348258467 -5.4737444213192861 0 0 0 1.5665299667756876</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='grey_wall_2'>
+      <static>true</static>
+      <link name='link'>
+        <pose>0 0 1.3999999999999999 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>7.5 0.20000000000000001 2.7999999999999998</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <box>
+              <size>7.5 0.20000000000000001 2.7999999999999998</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/grey wall/3/files/materials/scripts</uri>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/grey wall/3/files/materials/textures</uri>
+              <name>vrc/grey_wall</name>
+            </script>
+          </material>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-5.4997615434397407 -8.9362273892507584 0 0 0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='grey_wall_3'>
+      <static>true</static>
+      <link name='link'>
+        <pose>0 0 1.3999999999999999 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>7.5 0.20000000000000001 2.7999999999999998</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <box>
+              <size>7.5 0.20000000000000001 2.7999999999999998</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/grey wall/3/files/materials/scripts</uri>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/grey wall/3/files/materials/textures</uri>
+              <name>vrc/grey_wall</name>
+            </script>
+          </material>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>1.2380820345382257 -8.9407392525751455 0 0 0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='grey_wall_3_1'>
+      <static>true</static>
+      <link name='link'>
+        <pose>0 0 1.3999999999999999 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>7.5 0.20000000000000001 2.7999999999999998</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <box>
+              <size>7.5 0.20000000000000001 2.7999999999999998</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/grey wall/3/files/materials/scripts</uri>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/grey wall/3/files/materials/textures</uri>
+              <name>vrc/grey_wall</name>
+            </script>
+          </material>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>5.7999393367777632 -8.9790565885495823 0 0 0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='grey_wall_0_1_1'>
+      <static>true</static>
+      <link name='link'>
+        <pose>0 0 1.3999999999999999 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>7.5 0.20000000000000001 2.7999999999999998</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <box>
+              <size>7.5 0.20000000000000001 2.7999999999999998</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/grey wall/3/files/materials/scripts</uri>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/grey wall/3/files/materials/textures</uri>
+              <name>vrc/grey_wall</name>
+            </script>
+          </material>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>8.9736451702131728 -5.4145587337699022 0 0 0 1.5665299667756876</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='grey_wall_0_1_2'>
+      <static>true</static>
+      <link name='link'>
+        <pose>0 0 1.3999999999999999 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>7.5 0.20000000000000001 2.7999999999999998</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <box>
+              <size>7.5 0.20000000000000001 2.7999999999999998</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/grey wall/3/files/materials/scripts</uri>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/grey wall/3/files/materials/textures</uri>
+              <name>vrc/grey_wall</name>
+            </script>
+          </material>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>9.0243771333314236 1.7302447305000008 0 0 0 1.5665299667756876</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='grey_wall_1_1'>
+      <static>true</static>
+      <link name='link'>
+        <pose>0 0 1.3999999999999999 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>7.5 0.20000000000000001 2.7999999999999998</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <box>
+              <size>7.5 0.20000000000000001 2.7999999999999998</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/grey wall/3/files/materials/scripts</uri>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/grey wall/3/files/materials/textures</uri>
+              <name>vrc/grey_wall</name>
+            </script>
+          </material>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>5.4232015582964923 7.9974526425321395 0 0 0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3</uri>
+      <name>brick_box_3x1x3</name>
+      <pose>7.5334616841985858 0.53765568247313611 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3</uri>
+      <name>brick_box_3x1x3_0</name>
+      <pose>3.5168147552640989 0.51473094758684823 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3</uri>
+      <name>brick_box_3x1x3_1</name>
+      <pose>0.57236106510878537 0.49708093027896716 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3</uri>
+      <name>brick_box_3x1x3_2</name>
+      <pose>-2.316194887600437 0.51962145343227384 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3</uri>
+      <name>brick_box_3x1x3_3</name>
+      <pose>-7.4431878650373777 0.49419414092444591 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3</uri>
+      <name>brick_box_3x1x3_4</name>
+      <pose>2.5494210720062256 -7.3925590515136719 2.2204460492503131e-16 0 0 -1.5599099949851802</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3</uri>
+      <name>brick_box_3x1x3_4_1</name>
+      <pose>2.5079306356457298 -1.4969939106458292 2.2204460492503131e-16 0 0 -1.5599099949851802</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3</uri>
+      <name>brick_box_3x1x3_4_2</name>
+      <pose>2.5338538756023166 -3.2411593501072664 2.2204460492503131e-16 0 0 -1.5599099949851802</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3</uri>
+      <name>brick_box_3x1x3_4_3</name>
+      <pose>-2.4041775170498889 -7.4088372664141886 2.2204460492503131e-16 0 0 -1.5599099949851802</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3</uri>
+      <name>brick_box_3x1x3_2_1</name>
+      <pose>-3.3899291403371734 -3.9776252840913369 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3</uri>
+      <name>brick_box_3x1x3_2_2</name>
+      <pose>-5.9506556439846801 -3.981381659402043 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3</uri>
+      <name>brick_box_3x1x3_4_3_1</name>
+      <pose>-2.4243312572658491 -5.2104099136726694 2.2204460492503131e-16 0 0 -1.5599099949851802</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3</uri>
+      <name>brick_box_3x1x3_4_4</name>
+      <pose>2.5348477858393181 2.2368676503123508 2.2204460492503131e-16 0 0 -1.5599099949851802</pose>
+    </include>
+    <model name='ground_plane_1'>
+      <static>true</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.800000012 0.800000012 0.800000012 1</ambient>
+            <diffuse>0.800000012 0.800000012 0.800000012 1</diffuse>
+            <specular>0.800000012 0.800000012 0.800000012 1</specular>
+          </material>
+        </visual>
+        <pose>0 0 0 0 0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>2.0537892201298837 5.2521870276062721 0 0 0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3</uri>
+      <name>brick_box_3x1x3_4_5</name>
+      <pose>2.484713797087502 5.0967628829594727 2.2204460492503131e-16 0 0 -1.5599099949851802</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3</uri>
+      <name>brick_box_3x1x3_4_6</name>
+      <pose>2.4791606408413149 6.7490988258515632 2.2204460492503131e-16 0 0 -1.5599099949851802</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3</uri>
+      <name>brick_box_3x1x3_4_6_1</name>
+      <pose>-1.3865942616312128 5.1335491389996033 2.2204460492503131e-16 0 0 -1.5599099949851802</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3</uri>
+      <name>brick_box_3x1x3_2_3</name>
+      <pose>-2.337000075955264 3.5974469139597423 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3</uri>
+      <name>brick_box_3x1x3_2_4</name>
+      <pose>-5.292504656024775 3.594663681474386 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3</uri>
+      <name>brick_box_3x1x3_2_4_1</name>
+      <pose>-7.5459651989126639 3.5953903202811408 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/normalbed/2</uri>
+      <name>NormalBed</name>
+      <pose>4.2152299880981445 -3.4365799427032471 -0.04591735452413559 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/aws_robomaker_warehouse_bucket_01/3</uri>
+      <name>aws_robomaker_warehouse_Bucket_01</name>
+      <pose>4.7273998260498047 -6.6940097808837891 -0.026971125975251198 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/aws_robomaker_warehouse_bucket_01/3</uri>
+      <name>aws_robomaker_warehouse_Bucket_01_0</name>
+      <pose>7.2894802093505859 -2.6925199031829834 -0.017415327951312065 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/aws_robomaker_warehouse_trashcanc_01/4</uri>
+      <name>aws_robomaker_warehouse_TrashCanC_01</name>
+      <pose>3.9265037832937866 7.1725308074647733 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/table/4</uri>
+      <name>Table</name>
+      <pose>4.3093679928872133 -1.4823113176193785 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/aws_robomaker_warehouse_clutteringc_01/4</uri>
+      <name>aws_robomaker_warehouse_ClutteringC_01</name>
+      <pose>7.8031997680664062 -7.807030200958252 -0.0517546646296978 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/aws_robomaker_warehouse_clutteringd_01/4</uri>
+      <name>aws_robomaker_warehouse_ClutteringD_01</name>
+      <pose>-1.4041039943695068 -3.6715199947357178 -0.35962501168251038 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/aws_robomaker_warehouse_clutteringd_01/4</uri>
+      <name>aws_robomaker_warehouse_ClutteringD_01_0</name>
+      <pose>-1.3988136053085327 -5.1617698669433594 -0.35563799738883972 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/aws_robomaker_warehouse_clutteringd_01/4</uri>
+      <name>aws_robomaker_warehouse_ClutteringD_01_1</name>
+      <pose>-1.4105489253997803 -6.6373500823974609 -0.35375699400901794 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/aws_robomaker_warehouse_clutteringd_01/4</uri>
+      <name>aws_robomaker_warehouse_ClutteringD_01_2</name>
+      <pose>-1.4108158349990845 -8.1273002624511719 -0.34722700715065002 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/aws_robomaker_warehouse_clutteringc_01/4</uri>
+      <name>aws_robomaker_warehouse_ClutteringC_01_0</name>
+      <pose>-4.3771100044250488 -7.8199858665466309 -0.093467801809310913 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/aws_robomaker_warehouse_trashcanc_01/4</uri>
+      <name>aws_robomaker_warehouse_TrashCanC_01_0</name>
+      <pose>-6.8360908973400276 -0.52645286235682354 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/aws_robomaker_warehouse_palletjackb_01/4</uri>
+      <name>aws_robomaker_warehouse_PalletJackB_01</name>
+      <pose>3.6372799873352051 5.8590698242187491 0 0 0 -1.6002098949823882</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/aws_robomaker_warehouse_shelfd_01/4</uri>
+      <name>aws_robomaker_warehouse_ShelfD_01</name>
+      <pose>-5.0031330410969499 -2.8464775674662306 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/aws_robomaker_warehouse_bucket_01/3</uri>
+      <name>aws_robomaker_warehouse_Bucket_01_1</name>
+      <pose>-8.2221803665161133 2.2145900726318359 -0.020354265347123146 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/aws_robomaker_warehouse_bucket_01/3</uri>
+      <name>aws_robomaker_warehouse_Bucket_01_2</name>
+      <pose>1.3759399652481079 2.6168200969696045 -0.031455531716346741 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/aws_robomaker_warehouse_bucket_01/3</uri>
+      <name>aws_robomaker_warehouse_Bucket_01_3</name>
+      <pose>-2.4579799175262451 4.9142899513244629 -0.01815732941031456 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/aws_robomaker_warehouse_clutteringa_01/4</uri>
+      <name>aws_robomaker_warehouse_ClutteringA_01</name>
+      <pose>-5.2999262809753418 5.2976799011230469 -0.045713398605585098 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/aws_robomaker_warehouse_clutteringc_01/4</uri>
+      <name>aws_robomaker_warehouse_ClutteringC_01_1</name>
+      <pose>-7.3524198532104492 6.0307598114013672 -0.041464664041996002 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/aws_robomaker_warehouse_clutteringd_01/4</uri>
+      <name>aws_robomaker_warehouse_ClutteringD_01_3</name>
+      <pose>1.3599100112915039 5.5763301849365234 -0.35062301158905029 0 0 -3.1200113725664984</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/aws_robomaker_warehouse_bucket_01/3</uri>
+      <name>aws_robomaker_warehouse_Bucket_01_4</name>
+      <pose>1.3871957063674927 3.9580700397491455 -0.01853490062057972 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/aws_robomaker_warehouse_clutteringa_01/4</uri>
+      <name>aws_robomaker_warehouse_ClutteringA_01_0</name>
+      <pose>7.8226399421691895 2.1260199546813965 -0.059981651604175568 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/aws_robomaker_warehouse_trashcanc_01/4</uri>
+      <name>aws_robomaker_warehouse_TrashCanC_01_2</name>
+      <pose>3.5904800891876221 2.1055500507354736 0 0 0 1.5584947644710638</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/aws_robomaker_warehouse_bucket_01/3</uri>
+      <name>aws_robomaker_warehouse_Bucket_01_5</name>
+      <pose>5.6641788482666016 7.1744298934936523 -0.0099773602560162544 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/aws_robomaker_warehouse_bucket_01/3</uri>
+      <name>aws_robomaker_warehouse_Bucket_01_6</name>
+      <pose>3.5745317935943604 3.9371800422668457 -0.020737599581480026 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/aws_robomaker_warehouse_bucket_01/3</uri>
+      <name>aws_robomaker_warehouse_Bucket_01_7</name>
+      <pose>8.2946596145629883 -5.8842101097106934 -0.01438145712018013 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/aws_robomaker_warehouse_clutteringd_01/4</uri>
+      <name>aws_robomaker_warehouse_ClutteringD_01_4</name>
+      <pose>-2.1965100765228271 -0.48779499530792236 -0.34939101338386536 0 0 -1.5753052004890893</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/aws_robomaker_warehouse_clutteringd_01/4</uri>
+      <name>aws_robomaker_warehouse_ClutteringD_01_5</name>
+      <pose>1.2945214509963989 -8.3390998840332031 -0.35274198651313782 0 0 1.5714700020075463</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/aws_robomaker_warehouse_clutteringa_01/4</uri>
+      <name>aws_robomaker_warehouse_ClutteringA_01_1</name>
+      <pose>0.31941044330596924 -6.6697201728820801 -0.048438798636198044 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/aws_robomaker_warehouse_clutteringc_01/4</uri>
+      <name>aws_robomaker_warehouse_ClutteringC_01_2</name>
+      <pose>1.1238100528717041 -1.0692299604415894 -0.080906294286251068 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/bedsidetablecart/3</uri>
+      <name>BedsideTableCart</name>
+      <pose>3.3742599487304688 -4.2167000770568848 -0.069197803735733032 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/coffeetable/2</uri>
+      <name>CoffeeTable</name>
+      <pose>6.1291669710080328 -6.5479347005742907 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/dining chair/1</uri>
+      <name>DiningChair</name>
+      <pose>5.8104901313781738 -7.5250000953674316 0 0 0 2.5965999446127541</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/office chair/1</uri>
+      <name>OfficeChair</name>
+      <pose>4.3975490670809423 -2.0921718273906578 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/armchair/2</uri>
+      <name>Armchair</name>
+      <pose>7.168827010659296 -4.4054477450481064 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/aws_robomaker_warehouse_bucket_01/3</uri>
+      <name>aws_robomaker_warehouse_Bucket_01_8</name>
+      <pose>8.4381799697875977 3.8062798976898193 -0.04907970130443573 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/aws_robomaker_warehouse_bucket_01/3</uri>
+      <name>aws_robomaker_warehouse_Bucket_01_9</name>
+      <pose>7.3708696365356445 3.7656199932098389 -0.049273200333118439 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/aws_robomaker_warehouse_bucket_01/3</uri>
+      <name>aws_robomaker_warehouse_Bucket_01_10</name>
+      <pose>8.3095703125 -2.719480037689209 0.088409751653671265 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/aws_robomaker_warehouse_clutteringa_01/4</uri>
+      <name>aws_robomaker_warehouse_ClutteringA_01_2</name>
+      <pose>7.7349400520324707 -1.0335700511932373 -0.045578114688396454 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/aws_robomaker_warehouse_shelfe_01/4</uri>
+      <name>aws_robomaker_warehouse_ShelfE_01</name>
+      <pose>-4.9893999099731445 -5.0512537956237793 -0.057210098952054977 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/rubin/.gz/fuel/fuel.gazebosim.org/openrobotics/models/aws_robomaker_warehouse_shelfd_01/4</uri>
+      <name>aws_robomaker_warehouse_ShelfD_01_0</name>
+      <pose>0.032508306205272675 1.5224900245666504 -0.015100999735295773 0 0 0</pose>
+    </include>
+    <light name='sun' type='directional'>
+      <pose>0 0 10 0 0 0</pose>
+      <cast_shadows>true</cast_shadows>
+      <intensity>1</intensity>
+      <direction>-0.5 0.10000000000000001 -0.90000000000000002</direction>
+      <diffuse>0.800000012 0.800000012 0.800000012 1</diffuse>
+      <specular>0.200000003 0.200000003 0.200000003 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <linear>0.0099999997764825821</linear>
+        <constant>0.89999997615814209</constant>
+        <quadratic>0.0010000000474974513</quadratic>
+      </attenuation>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+  </world>
+</sdf>
