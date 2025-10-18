@@ -174,7 +174,7 @@
         </inertial>
     </link>
 
-    <!-- Support for Lidar  -->
+    <!-- Support for Lidar -->
     <joint name="lidar_support_joint" type="fixed" >
         <parent link="base_link" />
         <child link="support_link" />
@@ -194,7 +194,7 @@
 
     </link>
 
-        <!-- Lidar scan -->
+    <!-- Lidar scan joint and link -->
     <joint name="scan_joint" type="fixed">
         <parent link="support_link"/>
         <child link="scan_link"/>
@@ -224,5 +224,5 @@
             <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
         </inertial>
     </link>
-    
+
 </robot>
