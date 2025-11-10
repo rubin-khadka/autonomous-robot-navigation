@@ -94,6 +94,41 @@ def generate_launch_description():
         output='screen', 
     )
 
+    # # RGB image bridge with compression
+    # gz_image_bridge_rgb = Node(
+    #     package="ros_gz_image",
+    #     executable="image_bridge",
+    #     arguments=["camera/image"],  
+    #     output="screen",
+    #     parameters=[{'use_sim_time': True}],
+    # )
+
+    # # Depth image bridge with compression  
+    # gz_image_bridge_depth = Node(
+    #     package="ros_gz_image",
+    #     executable="image_bridge", 
+    #     arguments=["camera/depth_image"],  
+    #     output="screen",
+    #     parameters=[{'use_sim_time': True}],
+    # )
+
+    # # Camera info relays for compressed topics
+    # relay_rgb_info = Node(
+    #     package='topic_tools',
+    #     executable='relay',
+    #     name='relay_rgb_camera_info',
+    #     arguments=['camera/camera_info', 'camera/image/camera_info'],
+    #     parameters=[{'use_sim_time': True}]
+    # )
+
+    # relay_depth_info = Node(
+    #     package='topic_tools',
+    #     executable='relay',
+    #     name='relay_depth_camera_info',
+    #     arguments=['camera/camera_info', 'camera/depth_image/camera_info'],
+    #     parameters=[{'use_sim_time': True}]
+    # )
+
 
     launchDescriptionObject = LaunchDescription()
 
@@ -103,5 +138,9 @@ def generate_launch_description():
     launchDescriptionObject.add_action(nodeRobotStatePublisher)
     launchDescriptionObject.add_action(start_gazebo_ros_bridge_cmd)
     launchDescriptionObject.add_action(ekf_node)
+    # launchDescriptionObject.add_action(gz_image_bridge_rgb)
+    # launchDescriptionObject.add_action(gz_image_bridge_depth)
+    # launchDescriptionObject.add_action(relay_rgb_info)
+    # launchDescriptionObject.add_action(relay_depth_info)
 
     return launchDescriptionObject
