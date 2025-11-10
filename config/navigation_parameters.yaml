@@ -50,7 +50,7 @@ amcl:
 bt_navigator:
   ros__parameters:
     global_frame: map
-    robot_base_frame: base_footprint
+    robot_base_frame: base_link
     odom_topic: /odom
     bt_loop_duration: 10
     default_server_timeout: 20
@@ -242,7 +242,7 @@ local_costmap:
       update_frequency: 5.0
       publish_frequency: 2.0
       global_frame: odom
-      robot_base_frame: base_footprint
+      robot_base_frame: base_link
       rolling_window: true
       width: 3
       height: 3
@@ -265,7 +265,6 @@ local_costmap:
         observation_sources: scan
         scan:
           topic: /scan
-          sensor_frame: "scan_link"
           max_obstacle_height: 2.0
           clearing: True
           marking: True
@@ -285,7 +284,7 @@ global_costmap:
       update_frequency: 1.0
       publish_frequency: 1.0
       global_frame: map
-      robot_base_frame: base_footprint
+      robot_base_frame: base_link
       robot_radius: 0.22
       resolution: 0.05
       track_unknown_space: true
@@ -296,7 +295,6 @@ global_costmap:
         observation_sources: scan
         scan:
           topic: /scan
-          sensor_frame: "scan_link"
           max_obstacle_height: 2.0
           clearing: True
           marking: True
@@ -355,7 +353,7 @@ behavior_server:
       plugin: "nav2_behaviors::AssistedTeleop"
     local_frame: odom
     global_frame: map
-    robot_base_frame: base_footprint
+    robot_base_frame: base_link
     transform_tolerance: 0.1
     simulate_ahead_time: 2.0
     max_rotational_vel: 1.0
@@ -427,7 +425,7 @@ docking_server:
     undock_linear_tolerance: 0.05
     undock_angular_tolerance: 0.1
     max_retries: 3
-    base_frame: "base_footprint"
+    base_frame: "base_link"
     fixed_frame: "odom"
     dock_backwards: false
     dock_prestaging_tolerance: 0.5

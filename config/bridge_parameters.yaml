@@ -28,11 +28,11 @@
   gz_type_name: "gz.msgs.Twist"
   direction: ROS_TO_GZ
 
-# - ros_topic_name: "camera/image"
-#   gz_topic_name: "camera/image"
-#   ros_type_name: "sensor_msgs/msg/Image"
-#   gz_type_name: "gz.msgs.Image"
-#   direction: GZ_TO_ROS
+- ros_topic_name: "camera/image"
+  gz_topic_name: "camera/image"
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "gz.msgs.Image"
+  direction: GZ_TO_ROS
 
 - ros_topic_name: "camera/camera_info"
   gz_topic_name: "camera/camera_info"
@@ -47,11 +47,11 @@
   direction: GZ_TO_ROS
   lazy: false
 
-- ros_topic_name: "scan/points"
-  gz_topic_name: "scan/points"
-  ros_type_name: "sensor_msgs/msg/PointCloud2"
-  gz_type_name: "gz.msgs.PointCloudPacked"
-  direction: GZ_TO_ROS
+# - ros_topic_name: "scan/points"
+#   gz_topic_name: "scan/points"
+#   ros_type_name: "sensor_msgs/msg/PointCloud2"
+#   gz_type_name: "gz.msgs.PointCloudPacked"
+#   direction: GZ_TO_ROS
 
 - ros_topic_name: "/camera/depth_image"
   gz_topic_name: "/camera/depth_image"
@@ -59,8 +59,14 @@
   gz_type_name: "gz.msgs.Image"
   direction: GZ_TO_ROS
 
-- ros_topic_name: "/camera/points"
-  gz_topic_name: "/camera/points"
-  ros_type_name: "sensor_msgs/msg/PointCloud2"
-  gz_type_name: "gz.msgs.PointCloudPacked"
+# - ros_topic_name: "/camera/points"
+#   gz_topic_name: "/camera/points"
+#   ros_type_name: "sensor_msgs/msg/PointCloud2"
+#   gz_type_name: "gz.msgs.PointCloudPacked"
+#   direction: GZ_TO_ROS
+
+- ros_topic_name: "imu"
+  gz_topic_name: "imu"
+  ros_type_name: "sensor_msgs/msg/Imu"
+  gz_type_name: "gz.msgs.IMU"
   direction: GZ_TO_ROS

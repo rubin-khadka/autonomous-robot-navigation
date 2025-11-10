@@ -4,6 +4,7 @@ from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.actions import Node
+from launch_ros.actions import SetParameter 
 import xacro
 
 
@@ -15,6 +16,8 @@ def generate_launch_description():
 
     pathModelFile = os.path.join(get_package_share_directory(packageName), modelFilePath)
     robotDescription = xacro.process_file(pathModelFile).toxml()
+
+    set_use_sim_time = SetParameter(name='use_sim_time', value=True)
 
     world_path = os.path.join(
         get_package_share_directory(packageName),
@@ -67,13 +70,15 @@ def generate_launch_description():
         arguments=[
             '--ros-args',
             '-p',
-            f'config_file:={bridge_params}'
+            f'config_file:={bridge_params}',
+            '-p', 'use_sim_time:=true'
         ],
         output='screen', 
     )
 
     launchDescriptionObject = LaunchDescription()
 
+    launchDescriptionObject.add_action(set_use_sim_time)
     launchDescriptionObject.add_action(gazeboLaunch)
     launchDescriptionObject.add_action(spawnModelNodeGazebo)
     launchDescriptionObject.add_action(nodeRobotStatePublisher)
